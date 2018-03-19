@@ -1,21 +1,5 @@
 <?php
-if(isset($_POST['submit'])){
-    $to = "77604@rocteraa-student.nl"; // this is your Email address
-    $from = $_POST['email']; // this is the sender's Email address
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $subject = "Form submission";
-    $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
-
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
+include_once 'contactform.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -119,16 +103,31 @@ if(isset($_POST['submit'])){
           </blockquote>
         </div>
       </div>
-
-  <div id="ContactForm">
-  <form action="" method="post">
-  First Name: <input type="text" name="first_name" style="margin-bottom: 10px;"><br>
-  Last Name: <input type="text" name="last_name" style="margin-left:2px; margin-bottom: 10px;"><br>
-  Email: <input type="text" name="email" style="margin-left: 38px; margin-bottom: 10px;"><br>
-  Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
-  <input type="submit" name="submit" value="Submit">
-  </form>
-</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 center">
+            <div class="">
+              <form action="" method="post">
+                <div class="col-md-8">
+                First Name: <input type="text" name="first_name" style="margin-bottom: 10px;"><br>
+              </div>
+              <div class="col-sm-8">
+                Last Name: <input type="text" name="last_name" style="margin-left:2px; margin-bottom: 10px;"><br>
+              </div>
+              <div class="col-sm-8">
+                Email: <input type="text" name="email" style="margin-left: 38px; margin-bottom: 10px;"><br>
+              </div>
+              <div class="col-sm-8">
+                Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+              </div>
+              <div class="col-sm-6">
+              <input type="submit" name="submit" value="Submit">
+            </div>
+              </form>
+          </div>
+        </div>
+        </div>
+      </div>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
