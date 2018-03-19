@@ -1,3 +1,22 @@
+<?php
+if(isset($_POST['submit'])){
+    $to = "77604@rocteraa-student.nl"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,23 +88,8 @@
         </div>
       </div>
     </div>
-<!-- Row Closing Tag Reminder-->
-  </div>
-  <!-- Container Closing Tag -->
-</div>
 
-      <div class="card" style="background-color: purple;">
-        <div class="card-body">
-          <blockquote class="blockquote mb-4">
-            <h1 style="color: white;">" There are three responses to a piece of Design: yes,no and WOW! Wow is the one to aim for.""</h1>
-            <footer class="blockquote-footer" style="color: White">Milton Glaser </footer>
-          </blockquote>
-        </div>
-      </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-4">
+    <div class="col-md-8 mb-4">
       <div class="card">
         <div class="card-body">
           <div class="card-title">
@@ -98,14 +102,33 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 mt-4">
+    <div class="col-md-4">
       <img class="img-thumbnail" src="img/code.jpg" />
       <p> Note: This is a Placeholder Image</p>
     </div>
+<!-- Row Closing Tag Reminder-->
   </div>
+  <!-- Container Closing Tag -->
+</div>
 
-  </div>
+      <div class="card" style="background-color: purple; margin-bottom: 10px;">
+        <div class="card-body">
+          <blockquote class="blockquote mb-4">
+            <h1 style="color: white;">" There are three responses to a piece of Design: yes,no and WOW! Wow is the one to aim for.""</h1>
+            <footer class="blockquote-footer" style="color: White">Milton Glaser </footer>
+          </blockquote>
+        </div>
+      </div>
 
+  <div id="ContactForm">
+  <form action="" method="post">
+  First Name: <input type="text" name="first_name" style="margin-bottom: 10px;"><br>
+  Last Name: <input type="text" name="last_name" style="margin-left:2px; margin-bottom: 10px;"><br>
+  Email: <input type="text" name="email" style="margin-left: 38px; margin-bottom: 10px;"><br>
+  Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+  <input type="submit" name="submit" value="Submit">
+  </form>
+</div>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

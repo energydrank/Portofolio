@@ -3,3 +3,9 @@
   height: 300px;
   width: 200px;
 }
+
+#ContactForm
+{
+  float: left;
+  margin-left: 750px;
+}
