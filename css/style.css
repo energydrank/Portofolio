@@ -1,11 +1,110 @@
-.img-thumbnail
+body
 {
-  height: 300px;
-  width: 200px;
+  margin: 0px;
 }
+
+#Powerpoint
+{
+  height: 100px;
+  width: 100px;
+}
+
+#outlook
+{
+  height: 100px;
+  width: 100px;
+}
+
 
 #ContactForm
 {
   float: left;
   margin-left: 750px;
+}
+
+.row  .justify-content-center
+{
+  height: 30vh;
+  border: 1px solid red;
+}
+
+#Word
+{
+    height: 100px;
+    width: 100px;
+}
+
+#banner
+{
+  margin-top: 10px;
+  height: 400px;
+  background-image: url('../img/Jumbotron.jpg');
+  background-size: 100vw 400px;
+}
+
+#Welcome
+{
+  color: White;
+}
+
+#Bannertext
+{
+  color: white;
+}
+
+#Bannertext2
+{
+  color: white;
+}
+
+#Qoute
+{
+  background: linear-gradient(to right, purple, #200160);
+  margin-bottom: 10px;
+}
+
+#footer
+{
+    margin-top: 15px;
+    background: linear-gradient(to right, purple, #200160);
+    color: White;
+}
+
+#radiogaga
+{
+  height: 200px;
+  width: 200px;
+}
+
+.card-test-body {
+  position: relative;
+}
+
+.test {
+  position: absolute;
+  bottom: 20px;
+}
+
+#QouteThing
+{
+  color: white;
+}
+
+#DCHeroes
+{
+  height: 200px;
+  width: 200px;
+}
+
+#GameWorld
+{
+  margin-top: 90px;
+  height: 100px;
+  width: 250px;
+}
+
+#RadioGaga
+{
+  height: 200px;
+  width: 200px;
 }
